@@ -20,9 +20,16 @@ terra_router.get("/", (req, res) => {
         message: "welcome to the Terra Channel",
     })
 })
-////////////////////////////////////////////////////
-import usgs_api from "../sources/usgs-gov.js";
-terra_router.use("/earthquakes", usgs_api)
+
+
+
+////////////////////////////////////////////////////  
+// General Statistics 
+import { usgs_earthquake_count } from "../sources/usgs-gov.js"; 
+terra_router.get("/earthquakes", async (req, res) => usgs_earthquake_count(req,res))
+
+
+
 
 // terra_router.get("earthquakes", (req, res) => {
 //     try{
@@ -31,4 +38,23 @@ terra_router.use("/earthquakes", usgs_api)
 
 
 export default terra_router; 
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////// 
+//// old method 
+// import usgs_api from "../sources/usgs-gov.js";
+// terra_router.use("/earthquakes", usgs_api)
+
+
+
+
+
+
 

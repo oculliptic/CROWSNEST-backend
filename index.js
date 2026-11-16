@@ -13,10 +13,10 @@ app.get("/", (req, res) => {
 ///////////////////////////////////////////////////////////// 
 // MOUNTING ROUTERS ? (check if 'router' is the correct term) 
 // const wh = require("./routes/worldhealth/world_health.js")
-import world_health_router from "./routes/world_health.js";
+import world_health_router from "./routes/worldhealth-routes.js";
 app.use("/world_health", world_health_router);
 
-import terra_router from "./routes/terra_tracker.js";
+import terra_router from "./routes/terra_routes.js";
 app.use("/terra", terra_router); 
 
 
